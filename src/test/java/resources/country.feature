@@ -6,4 +6,10 @@ Feature: Create a Country
     And Click on setup on top
     And Click on parameter
     And Click on countries
+    And Click on plus icon
+    And Type in the Name "Montenegro "
+    And Type in the Code "Budva"
+    When Click on save button
+    Then "Montenegro" should be displayed
+
 

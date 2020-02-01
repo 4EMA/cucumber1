@@ -6,13 +6,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class leftNav {
-    private WebDriver driver ;
+public class leftNav extends AbstractClass {
+    private WebDriver driver;
 
-    public leftNav(){
+    public leftNav() {
 
         driver = Driver.getDriver();
-        PageFactory.initElements( driver , this );
+        PageFactory.initElements(driver, this);
 
     }
 
@@ -28,19 +28,27 @@ public class leftNav {
     @FindBy(xpath = "//span[contains(text(),'Citizenship')]")
     private WebElement buttonCitizenship;
 
-    public void clickondropdownSetup(){
-        dropdownSetup.click();
+    public void clickondropdownSetup() {
+        clickFunction(dropdownSetup);
     }
 
-    public void clickondropdownParameters(){
-        dropdownParameters.click();
+    public void clickondropdownParameters() {
+        clickFunction(dropdownParameters);
     }
 
-    public void clickonbuttonCountries(){
-        buttonCountries.click();
-    }
-    public void clickbuttonCitizenship(){
-        buttonCitizenship.click();
+    public void clickonbuttonCountries() {
+        clickFunction(buttonCountries);
+
     }
 
+    public void clickbuttonCitizenship() {
+        clickFunction(buttonCitizenship);
+    }
+
+    //    return the current websiteURL
+    public String getURL() {
+        String url = driver.getCurrentUrl();
+        return url;
+
+    }
 }
